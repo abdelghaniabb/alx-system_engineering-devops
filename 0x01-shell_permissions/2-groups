@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Groups for user $(whoami): $(id -Gn $(whoami))"
+echo "$(id -Gn $(whoami))"
