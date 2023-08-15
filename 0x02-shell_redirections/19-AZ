@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$input" | tr 'Ac' 'Ze'
+input=$(cat); modified=$(echo "$input" | tr 'Ac' 'Ze'); echo "$modified"
