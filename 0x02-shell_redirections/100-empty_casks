@@ -1,2 +1,3 @@
 #!/bin/bash
-find . -empty -printf '%P\n' | sed 's:/.*/::'
+find . -empty -printf '%P\n' | while IFS= read -r line do echo "${line##*/}" done
+
