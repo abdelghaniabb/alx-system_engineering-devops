@@ -4,6 +4,11 @@
 ## 0x01-shell_permissions
 - 102-if_only
 ## 0x02-shell_redirections
-- 7-file
-- 19-AZ
-....
+- 100-empty_casks
+- 101-gifs
+- 102-acrostic
+- 103-the_biggest_fan
+## 0x03-shell_variables_expansions
+- 101-rot13
+- 102-odd
+- 103-water_and_stir
