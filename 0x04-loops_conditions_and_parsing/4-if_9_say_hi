@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#displays Best School 10 timesd,, but for the 9th iteration, display Hi
+#displays Best School 10 timesd,display Hi
 
 i=1
 while ((i<11))
