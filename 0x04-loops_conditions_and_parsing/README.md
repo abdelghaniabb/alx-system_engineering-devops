@@ -1,6 +1,7 @@
 # Project: 0x04. Loops, conditions and parsing
 - 0-RSA_public_key.pub
 - 4-if_9_say_hi
+- 8-for_ls
 ## Resources
 
 #### Read or watch:
