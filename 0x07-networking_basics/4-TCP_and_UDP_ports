@@ -1,37 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# display listening ports
 
-# Check if the user has root privileges (needed for some options in ss)
-if [ "$(id -u)" != "0" ]; then
-  echo "This script requires root privileges. Please run it as root or with sudo."
-  exit 1
-fi
-
-# Get listening sockets with ss, filter for LISTEN and remove header
-listening_sockets=$(ss -tuln | awk 'NR>1 && /LISTEN/')
-
-# Print headers
-echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
-
-# Loop through each line of listening sockets
-while read -r line; do
-  proto=$(echo "$line" | awk '{print $1}')
-  recvq=$(echo "$line" | awk '{print $2}')
-  sendq=$(echo "$line" | awk '{print $3}')
-  local_address=$(echo "$line" | awk '{print $4}')
-  foreign_address=$(echo "$line" | awk '{print $5}')
-  state=$(echo "$line" | awk '{print $6}')
-
-  # Extract port number from local address
-  port=$(echo "$local_address" | awk -F':' '{print $NF}')
-  
-  # Find the program name and PID associated with the port using lsof
-  pid_program=$(lsof -i :"${port}" | grep '(LISTEN)')
-  
-  # Extract PID and program name
-  pid=$(echo "$pid_program" | awk '{print $2}')
-  program=$(echo "$pid_program" | awk '{print $1}')
-  
-  # Print the information
-  echo "$proto $recvq $sendq $local_address $foreign_address $state $pid/$program"
-done <<< "$listening_sockets"
+netstat -l --program
 
