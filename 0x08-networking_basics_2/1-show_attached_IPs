@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# display all UP4 active
+
+ifconfig | grep -Eo "inet ([0-9]*\.){3}[0-9]*"
+
