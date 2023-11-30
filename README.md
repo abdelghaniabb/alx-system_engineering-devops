@@ -12,3 +12,8 @@
 - 101-rot13
 - 102-odd
 - 103-water_and_stir
+
+
+## 0x07-networking_basics
+- 4-TCP_and_UDP_ports
+- 5-is_the_host_on_the_network

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Get the active network interfaces using ifconfig and filter IPv4 addresses
+
+active_interfaces=$(ifconfig | grep -E 'inet ' | awk '{print $2}' | grep -oP '(\d+\.\d+\.\d+\.\d+)')
+echo "$active_interfaces"

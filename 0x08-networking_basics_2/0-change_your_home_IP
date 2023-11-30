@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Edit the /etc/hosts file to configure the desired hostname resolutions
+
+sudo sh -c 'echo "127.0.0.1 localhost" >> /etc/hosts'
+sudo sh -c 'echo "8.8.8.8 facebook.com" >> /etc/hosts'
