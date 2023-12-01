@@ -19,4 +19,5 @@
 - 5-is_the_host_on_the_network
 ## 0x08-networking_basics_2
 - 1-show_attached_IPs
+- 100-port_listening_on_localhost
 
