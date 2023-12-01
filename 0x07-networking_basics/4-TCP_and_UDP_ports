@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# displays listening ports
+
+# Iterate over listening sockets
+netstat -tulpn | awk '/^tcp/ && /LISTEN/ {print $7}' | \
+while read line; do
+    # Extract PID and port
+    pid=$(echo "$line" | cut -d '/' -f 1)
+    port=$(echo "$line" | cut -d ':' -f 2)
+
+    # Get program name
+    program=$(ps -p "$pid" -o comm=)
+
+    # Display PID, program, and port
+    printf "%-6s%-21s%s\n" "$pid" "$program" "$port"
+done
